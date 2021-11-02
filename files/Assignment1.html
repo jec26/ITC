@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>Assignment#1</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Assignment#1</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="main">
+                <article id="home" class="panel">
+                    <header>
+                        <h1>Simple Conversions</h1>
+                        <h3>Celsius to Fahrenheit</h3>
+                        <form>
+                            <div>
+                                <div class="row">
+                                    <div class="col-7 col-14-small">
+                                        <input type="text" name="Celsius" id="clss" onkeyup="compute_clss()">
+                                    </div>
+                                    <div class="col-7 col-14-small">
+                                        <input type="text" name="Fahrenheit" id="frht" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <h3>Fahrenheit to Celsius</h3>
+                        <form>
+                            <div>
+                                <div class="row">
+                                    <div class="col-7 col-14-small">
+                                        <input type="text" name="Fahrenheit" id="frht1" onkeyup="compute_frht1()">
+                                     </div>
+                                    <div class="col-7 col-14-small">
+                                        <input type="text" name="Celsius"  id="clss1" readonly>
+                                     </div>
+                                </div>
+                            </div>
+                        </form>
+                        <h3>Meters to Feet</h3>
+                        <form>
+                            <div>
+                                <div class="row">
+                                    <div class="col-7 col-14-small">
+                                        <input type="text" name="Meters" id="mtr" onkeyup="compute_mtrft()">
+                                    </div>
+                                    <div class="col-7 col-14-small">
+                                        <input type="text" name="Feet"  id="ft" readonly>
+                                     </div>
+                                </div>
+                             </div>
+                         </form>
+                         <h3>Feet to Meters</h3>
+                        <form>
+                            <div>
+                                <div class="row">
+                                    <div class="col-7 col-14-small">
+                                        <input type="text" name="Feet" id="ft1" onkeyup="compute_ftmtr()">
+                                    </div>
+                                    <div class="col-7 col-14-small">
+                                        <input type="text" name="Meters" id="mtr1" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                            <a href="index.html">
+                                <button>
+                                    Back
+                                </button>
+                            </a>
+                    </header>
+                </article>
+            </div>
+        </div>
+
+        <!--CtF-->
+        <script>
+            function compute_clss(){
+                let x;
+                x=document.getElementById("clss").value
+                let z = (x * 9 / 5) + 32
+                document.getElementById("frht").value=z + "°F";
+
+            }
+        </script>
+
+        <!--FtC-->
+        <script>
+            function compute_frht1(){
+                let x;
+                x = document.getElementById("frht1").value
+                let z = (x - 32) * 5/9;
+                document.getElementById("clss1").value=z + "°C";
+            }
+        </script>
+
+        <!--MtF-->
+        <script>
+            function compute_mtrft(){
+                let x;
+                x = document.getElementById("mtr").value
+                let z = x * 3.28084;
+                document.getElementById("ft").value=z + " ft";
+            }
+        </script>
+
+        <!--FtM-->
+        <script>
+            function compute_ftmtr(){
+                let x;
+                x = document.getElementById("ft1").value
+                let z = x / 3.28084;
+                document.getElementById("mtr1").value=z + " m";
+            }
+
+        </script>
+    
+    </body>
+</html>
