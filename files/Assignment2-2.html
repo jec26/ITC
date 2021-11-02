@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment#2</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Income Tax Caculator</h1>
+    <input type="text" id="income">
+    <button onclick="compute_inctax()">Calculate</button>
+    <p id="inctax"></p>
+
+    <script>
+    function compute_inctax(){
+        var i = document.getElementById("income").value*1;
+        var inctax = 0.00;
+
+        if(i <= 250000){
+          inctax = 0.00;
+        }
+        else if(i > 250000&& i <= 400000){
+          inctax = (i - 250000)*0.20;
+        }
+        else if(i > 400000 && i <= 800000){
+          inctax = (i - 400000)*0.25+30000;
+        }
+        else if(i > 800000 && i <= 800000){
+          inctax = (i - 800000)*0.30+130000;
+        }
+        else if(i > 2000000 && i <= 8000000){
+          inctax = (i - 2000000)*0.32+490000;
+        }
+        else if(i > 8000000){
+          inctax = (i - 8000000)*0.35+2410000;
+        }
+        document.getElementById("inctax").innerHTML = "Your income tax is: ₱" + inctax;
+    }
+    </script>     
+    </body>
+</html> 
+

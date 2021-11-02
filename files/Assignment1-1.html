@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>Assignment#1</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Simple Conversions</h1>
+        <h2>Celsius to Fahrenheit</h2>
+        <input type="text" id="clsstF" placeholder="Enter Celsius">
+        <button onclick="calc_clsstF()">Convert</button>
+        <p id="frht"></p>
+
+        <h2>Fahrenheit to Celsius</h2>
+        <input type="text" id="frhtC" placeholder="Enter Fahrenheit">
+        <button onclick="calc_frhtC()">Convert</button>
+        <p id="clss"></p>
+
+        <h2>Meters to Feet</h2>
+        <input type="text" id="mtr" placeholder="Enter Meters">
+        <button onclick="calc_mtrft()">Convert</button>
+        <p id="ft"></p>
+
+        <h2>Feet to Meters</h2>
+        <input type="text" id="ft_2" placeholder="Enter Feet">
+        <button onclick="calc_ftmtr()">Convert</button>
+        <p id="mtr_2"></p>
+
+        <script>
+            function calc_clsstF(){
+                let x;
+                x=document.getElementById("clsstF").value
+                let z = (x * 9 / 5) + 32
+                document.getElementById("frht").innerHTML = z + "°F";
+
+            }
+        </script>
+
+        <script>
+            function calc_frhtC(){
+                let x;
+                x = document.getElementById("frhtC").value
+                let z = (x - 32) * 5/9;
+                document.getElementById("clss").innerHTML = z + "°C" ;
+            }
+        </script>
+
+        <script>
+            function calc_mtrft(){
+                let x;
+                x = document.getElementById("mtr").value
+                let z = x * 3.28084;
+                document.getElementById("ft").innerHTML = z + " ft." ;
+            }
+        </script>
+
+        <script>
+            function calc_ftmtr(){
+                let x;
+                x = document.getElementById("ft_2").value
+                let z = x / 3.28084;
+                document.getElementById("mtr_2").innerHTML=z + " meters";
+            }
+        </script>
+    </body>
+</html>
